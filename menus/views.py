@@ -8,5 +8,8 @@ from django.utils import timezone
 # Create your views here.
 def index(request): 
     today = datetime.today().date()
-    context = {"date" : today}
+    context = {"today" : today}
     return render(request, 'menus/index.html', context = context)
+
+def menu_detail(request, menu):
+    return render(request,'menus/detail.html')
